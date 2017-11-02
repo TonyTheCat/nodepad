@@ -1,3 +1,4 @@
+// Npm modules
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -6,29 +7,29 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+// Router
 const index = require('./routes/index');
 const users = require('./routes/users');
-
+// App instance
 const app = express();
-
-// connect to DB
+// Connect to DB
 const db = mongoose.connect('mongodb://localhost/nodepad');
-// require model
-const Document = require('./model/document').Document(db);
+// Require models
+const Document = require('./models/document').Document(db);
 
-
-// view engine setup
+// View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// Use middleware
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Use routes
 app.use('/', index);
 app.use('/users', users);
 
