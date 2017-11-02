@@ -1,25 +1,27 @@
 const express = require('express');
 const router = express.Router();
 const controllers = require('../controllers/documents');
+const views = require('../views/documents/index.jade');
 
 // Index
-router.get('/documents.:format', (req, res) => {
-    return controllers
+router.get('/', (req, res) => {
+    res.render('index');
+    // return controllers.getAllDocuments();
 });
 
 // Create
-router.post('/documents.:format?', (req, res) => {});
+router.post('/', (req, res) => {});
 
 // Read
-router.get('/documents/:id.:format?', (req, res) => {});
+router.get('/:id', (req, res) => {});
 
 // Update
-router.put('/documents/:id.:format?', (req, res) => {
+router.put('/:id', (req, res) => {
     res.render()
 });
 
 // Delete
-router.delete('/documents/:id.:format?', (req, res) => {});
+router.delete('/:id', (req, res) => {});
 
 // Export
 module.exports = router;
