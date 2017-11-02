@@ -15,7 +15,7 @@ router.get('/documents/:id.:format?', (req, res) => {});
 
 // Update
 router.put('/documents/:id.:format?', (req, res) => {
-    render
+    res.render()
 });
 
 // Delete

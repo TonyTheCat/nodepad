@@ -1,10 +1,13 @@
-const mongoose = require('mongoose');
+const Documents = {};
 
-mongoose.model('Document', {
-    properties: ['title', 'data', 'tags'],
-    indexes: ['title']
-});
+Documents.create = ({name, pid}) => {};
 
-exports.Document = function (db) {
-    return db.model('Document');
-}
+Documents.getOne = (id) => {};
+
+Documents.getAll = (pid) => {};
+
+Documents.update = (id, {name}) => {};
+
+Documents.remove = (id) => {};
+
+module.exports = Documents;

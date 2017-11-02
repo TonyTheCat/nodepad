@@ -15,8 +15,6 @@ const documents = require('./routes/documents');
 const app = express();
 // Connect to DB
 const db = mongoose.connect('mongodb://localhost/nodepad');
-// Require models
-const Document = require('./models/document').Document(db);
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
