@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const controllers = require('../controllers/documents');
 
 // Index
-router.get('/documents.:format', (req, res) => {});
+router.get('/documents.:format', (req, res) => {
+    return controllers
+});
 
 // Create
 router.post('/documents.:format?', (req, res) => {});
@@ -11,10 +14,12 @@ router.post('/documents.:format?', (req, res) => {});
 router.get('/documents/:id.:format?', (req, res) => {});
 
 // Update
-router.put('/documents/:id.:format?', (req, res) => {});
+router.put('/documents/:id.:format?', (req, res) => {
+    render
+});
 
 // Delete
-router.del('/documents/:id.:format?', (req, res) => {});
+router.delete('/documents/:id.:format?', (req, res) => {});
 
 // Export
 module.exports = router;
